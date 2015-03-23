@@ -1,0 +1,33 @@
+// FONTS.
+$tahoma: Tahoma, Arial, sans-serif;
+
+// COLORS.
+$white: #fff;
+$black: #000;
+$mine: #333;
+$tundora: #444;
+$emperor: #555;
+$dusty: #999;
+$oslo: #939494;
+$concrete: #f3f3f3;
+$orange: #eb4200;
+
+// COLORS BY ELEMENTS.
+$nav: $mine;
+$content-bg: $concrete;
+$footer: $oslo;
+
+// LAYOUT.
+$container: 1140px;
+
+// BREAK-POINTS.
+$mobile-land: 480px;
+$tablet: 768px;
+$tablet-land: 1024px;
+$desktop: 1140px;
+
+// Z-INDEXES.
+$under-content: -1;
+$content: 1;
+$overlay: 5;
+$modal: 10;
