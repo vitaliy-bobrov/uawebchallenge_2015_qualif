@@ -43,8 +43,9 @@ $tablet-land: 1024px;
 $desktop: 1140px;
 
 // Z-INDEXES.
+$parallax-bg: -2;
 $under-content: -1;
-$content: 1;
+$content: 0;
 $subnav: 3;
 $image-overlay: 4;
 $overlay: 5;
