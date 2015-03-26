@@ -2,5 +2,5 @@ a,
 input,
 textarea,
 button {
-  transition: all .4s linear;
+  transition: all $default-animation-time $linear;
 }

@@ -76,6 +76,10 @@ p {
   padding-left: 5%;
   padding-right: 5%;
 
+  &_inline-blocks {
+    font-size: 0;
+  }
+
   @media all and (min-width: $desktop) {
     width: $container;
     margin-left: auto;

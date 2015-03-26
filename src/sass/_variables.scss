@@ -4,6 +4,7 @@ $tahoma: Tahoma, Arial, sans-serif;
 // COLORS.
 $white: #fff;
 $black: #000;
+$gunsmoke: #8c8d8d;
 $mine: #333;
 $tundora: #444;
 $emperor: #555;
@@ -11,14 +12,26 @@ $dusty: #999;
 $oslo: #939494;
 $concrete: #f3f3f3;
 $orange: #eb4200;
+$sun: #ff4700;
 
 // COLORS BY ELEMENTS.
 $nav: $mine;
+$nav-item-active: $sun;
+$nav-item-expanded: $gunsmoke;
+$sub-nav-bg: $gunsmoke;
 $content-bg: $concrete;
 $footer: $oslo;
 
 // LAYOUT.
 $container: 1140px;
+
+// TIMERS.
+$short-animation-time: .2s;
+$default-animation-time: .4s;
+
+// ANIMATION FUNCTIONS.
+$linear: linear;
+$ease: ease;
 
 // BREAK-POINTS.
 $mobile-land: 480px;
@@ -29,5 +42,7 @@ $desktop: 1140px;
 // Z-INDEXES.
 $under-content: -1;
 $content: 1;
+$subnav: 3;
+$image-overlay: 4;
 $overlay: 5;
 $modal: 10;

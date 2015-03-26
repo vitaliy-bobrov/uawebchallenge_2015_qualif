@@ -11,59 +11,81 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body class="front">
-    <header class="header container" role="banner">
-      <img src="images/logo.svg" alt="PROALU" class="logo loho_header">
-      <nav class="nav nav_main" role="navigation">
-        <a href="#" class="nav__item nav__item_active nav__item_expandable">Produkty
-          <span class="nav__subnav">
-            <span class="container">
+    <header class="header" role="banner">
+      <div class="container container_inline-blocks">
+        <a href="#" class="link link_opacity" title="PROALU">
+          <img src="images/logo.svg" alt="PROALU" class="logo logo_header">
+        </a>
+        <nav class="nav nav_main" role="navigation">
+          <a href="#" class="nav__item nav__item_expandable">Produkty</a>
+          <span class="subnav">
+            <span class="container container_inline-blocks">
               <a href="#" class="subnav__item">
-                <img src="images/product-1.jpg" alt="" class="subnav__item__image">
+                <span class="subnav__item__image-wrapper">
+                  <img src="images/product-1.jpg" alt="" class="subnav__item__image">
+                </span>
                 <h3 class="subnav__item__title">Rolety</h3>
               </a>
               <a href="#" class="subnav__item">
-                <img src="images/product-2.jpg" alt="" class="subnav__item__image">
+                <span class="subnav__item__image-wrapper">
+                  <img src="images/product-2.jpg" alt="" class="subnav__item__image">
+                </span>
                 <h3 class="subnav__item__title">Venkovní žaluzie</h3>
               </a>
               <a href="#" class="subnav__item">
-                <img src="images/product-3.jpg" alt="" class="subnav__item__image">
+                <span class="subnav__item__image-wrapper">
+                  <img src="images/product-3.jpg" alt="" class="subnav__item__image">
+                </span>
                 <h3 class="subnav__item__title">Systémové parapety</h3>
               </a>
               <a href="#" class="subnav__item">
-                <img src="images/product-4.jpg" alt="" class="subnav__item__image">
+                <span class="subnav__item__image-wrapper">
+                  <img src="images/product-4.jpg" alt="" class="subnav__item__image">
+                </span>
                 <h3 class="subnav__item__title">Markýzy</h3>
               </a>
               <a href="#" class="subnav__item">
-                <img src="images/product-5.jpg" alt="" class="subnav__item__image">
+                <span class="subnav__item__image-wrapper">
+                  <img src="images/product-5.jpg" alt="" class="subnav__item__image">
+                </span>
                 <h3 class="subnav__item__title">Vrata</h3>
               </a>
               <a href="#" class="subnav__item">
-                <img src="images/product-6.jpg" alt="" class="subnav__item__image">
+                <span class="subnav__item__image-wrapper">
+                  <img src="images/product-6.jpg" alt="" class="subnav__item__image">
+                </span>
                 <h3 class="subnav__item__title">Sítě proti hmyzu</h3>
               </a>
               <a href="#" class="subnav__item">
-                <img src="images/product-7.jpg" alt="" class="subnav__item__image">
+                <span class="subnav__item__image-wrapper">
+                  <img src="images/product-7.jpg" alt="" class="subnav__item__image">
+                </span>
                 <h3 class="subnav__item__title">Barvy rolet a žaluzií</h3>
               </a>
               <a href="#" class="subnav__item">
-                <img src="images/product-8.jpg" alt="" class="subnav__item__image">
+                <span class="subnav__item__image-wrapper">
+                  <img src="images/product-8.jpg" alt="" class="subnav__item__image">
+                </span>
                 <h3 class="subnav__item__title">Spočítejte si cenu</h3>
               </a>
             </span>
           </span>
-        </a>
-        <a href="#" class="nav__item">Konfigurátor</a>
-        <a href="#" class="nav__item">Novinky</a>
-        <a href="#" class="nav__item">O společnosti</a>
-        <a href="#" class="nav__item">Kontakt</a>
-      </nav>
-      <div class="lang-switch">
-        <div class="lang-switch__item lang-switch__item_active">CZ</div>
-        <div class="lang-switch__item">GR</div>
-        <div class="lang-switch__item">EN</div>
+
+          <a href="#" class="nav__item">Konfigurátor</a>
+          <a href="#" class="nav__item">Novinky</a>
+          <a href="#" class="nav__item">O společnosti</a>
+          <a href="#" class="nav__item">Kontakt</a>
+        </nav>
+        <div class="lang-switch">
+          <div class="lang-switch__item lang-switch__item_active">CZ</div>
+          <div class="lang-switch__item">GR</div>
+          <div class="lang-switch__item">EN</div>
+        </div>
       </div>
-      <section class="banner banner_parallax">
-        <img src="images/banner-bg.jpg" alt="Banner background" class="banner_background">
+    </header>
+    <section class="banner banner_parallax">
+      <img src="images/banner-bg.jpg" alt="Banner background" class="banner_background">
+      <div class="container">
         <h1 class="banner__title">Vyrábíme pro Vás předokenní rolety</h1>
         <h2 class="banner__subtitle">pro zabudování v novostavbách i pro dodatečnou montáž</h2>
         <button class="banner__button banner__button_call-to-buy">Garance nejlepší ceny</button>
@@ -76,8 +98,8 @@
           <a href="#" class="nav__item">Venkovní žaluzie</a>
           <a href="#" class="nav__item">Systémové parapety</a>
         </nav>
-      </section>
-    </header>
+      </div>
+    </section>
     <main class="content" role="main">
       <div class="container">
         <section class="carousel">
