@@ -9,6 +9,7 @@ $mine: #333;
 $tundora: #444;
 $emperor: #555;
 $dusty: #999;
+$alto: #ddd;
 $oslo: #939494;
 $concrete: #f3f3f3;
 $orange: #eb4200;
@@ -19,6 +20,7 @@ $nav: $mine;
 $nav-item-active: $sun;
 $nav-item-expanded: $gunsmoke;
 $sub-nav-bg: $gunsmoke;
+$lang-bg: $gunsmoke;
 $content-bg: $concrete;
 $footer: $oslo;
 
@@ -26,6 +28,7 @@ $footer: $oslo;
 $container: 1140px;
 
 // TIMERS.
+$fast-animation-time: .1s;
 $short-animation-time: .2s;
 $default-animation-time: .4s;
 

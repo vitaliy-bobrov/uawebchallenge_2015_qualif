@@ -4,3 +4,23 @@ textarea,
 button {
   transition: all $default-animation-time $linear;
 }
+
+@keyframes subnavTitle {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-75px);
+  }
+}

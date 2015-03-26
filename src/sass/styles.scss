@@ -10,183 +10,37 @@
 // GLOBAL DEFINITIONS.
 @import 'partials/global';
 
+// LAYOUTS.
+@import 'partials/layout/container';
+@import 'partials/layout/header';
+
+// COMPONENTS.
+@import 'partials/components/logo';
+@import 'partials/components/link';
+@import 'partials/components/navigation';
+@import 'partials/components/language-switch';
+
 // ANIMATIONS.
 @import 'animations';
 
-.header {
-  position: relative;
-  perspective: 500;
-  box-shadow: 0px 3px 5px 0px rgba($black, .1);
-}
+.banner {
+  height: 523px;
 
-.logo {
-  display: inline-block;
-  vertical-align: top;
-  height: auto;
+  &_parallax {
+    position: relative;
 
-  &_header {
-    padding-top: 23px;
-  }
-}
-
-.nav {
-  display: inline-block;
-  vertical-align: top;
-
-  &_main {
-    width: 867px;
-    text-align: center;
-
-    .nav__item {
-      line-height: 71px;
-      padding: 0 12px;
-      margin-left: 30px;
-      color: $mine;
-      border-bottom: 2px solid $white;
-
-      &:hover,
-      &:focus,
-      &_active {
-        color: $nav-item-active;
-        border-color: $nav-item-active;
-      }
-
-      &_expandable {
-        &:hover,
-        &:focus,
-        &.nav__item_expanded {
-          color: $white;
-          border-color: $nav-item-expanded;
-          background:  $nav-item-expanded;
-
-          & + .subnav {
-            opacity: 1;
-            transform: rotateY(0);
-
-            .subnav__item {
-              opacity: 1;
-              transform: translateX(0);
-
-              &:first-of-type {
-                transition-delay: $default-animation-time;
-              }
-
-              @for $index from 2 through 10 {
-                &:nth-of-type(#{$index}) {
-                  transition-delay: $short-animation-time + ($short-animation-time * $index);
-                }
-              }
-            }
-          }
-        }
-      }
-
-      &:first-child {
-        margin-left: 0;
-      }
-    }
-  }
-
-  &__item {
-    display: inline-block;
-    vertical-align: top;
-    font-size: 13px;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-}
-
-.subnav {
-  padding: 26px 0 33px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  z-index: $subnav;
-  opacity: 0;
-  transform: rotateX(-90deg);
-  transform-origin: 0 0 0;
-  transform-style: preserve-3d;
-  transition: all $default-animation-time $ease;
-  will-change: opacity, transform;
-  background: $sub-nav-bg;
-
-  &:hover {
-    opacity: 1;
-    transform: rotateY(0);
-  }
-
-  &__item {
-    display: inline-block;
-    vertical-align: top;
-    width: 117px;
-    margin-left: 29px;
-    text-align: left;
-    text-decoration: none;
-    opacity: 0;
-    transform: translateX(-20px);
-    transition: all $short-animation-time $linear;
-    will-change: opacity, transform;
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:hover,
-    &:focus {
-      & .subnav__item__image-wrapper:after {
-        background: rgba($black, .75);
-      }
-
-      & .subnav__item__title {
-        text-align: center;
-        transform: translateY(-75px);
-      }
-    }
-
-    &__image-wrapper {
-      display: inline-block;
-      vertical-align: top;
-      max-height: 117px;
-      margin-bottom: 5px;
-      position: relative;
-
-      &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        transition: all $short-animation-time $linear;
-        background: rgba($black, 0);
-      }
-    }
-
-    &__title {
-      max-width: 98%;
-      margin-bottom: 0;
-      font-size: 14px;
-      font-weight: 400;
-      white-space: normal;
-      color: $white;
-      z-index: $image-overlay;
-      transition: all $short-animation-time $linear $short-animation-time;
-      will-change: transform;
-    }
-  }
-}
-
-.lang-switch {
-  display: inline-block;
-  vertical-align: top;
-}
-
-.link {
-  &_opacity {
-    &:hover {
-      opacity: .75;
+    &__background {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url('../images/banner-bg.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: 0 center;
+      background-size: cover;
+      z-index: $under-content;
     }
   }
 }

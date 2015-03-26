@@ -18,6 +18,11 @@
       $(this).prev(navExpandable).removeClass(expandedClass);
     });
 
+    // Language switcher handler.
+    $('.lang-switch__item_active').click(function() {
+      $(this).toggleClass('lang-switch__item_active_switch');
+    });
+
   });
 })(jQuery, window);
 

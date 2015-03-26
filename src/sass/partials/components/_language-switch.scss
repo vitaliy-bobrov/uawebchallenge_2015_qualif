@@ -1,0 +1,58 @@
+.lang-switch {
+  display: inline-block;
+  vertical-align: top;
+  width: 69px;
+  height: 73px;
+  border-left: 1px solid $alto;
+  border-right: 1px solid $alto;
+
+  &__item {
+    height: 44px;
+    position: relative;
+    z-index: $subnav;
+    font-size: 13px;
+    line-height: 36px;
+    text-align: center;
+    color: $white;
+    background: $lang-bg;
+    opacity: 0;
+    transition: all $short-animation-time $linear;
+
+    &_active {
+      height: 60px;
+      line-height: 73px;
+      opacity: 1;
+      position: relative;
+      cursor: pointer;
+
+      &:after {
+        content: '^';
+        position: absolute;
+        top: -3px;
+        right: 10px;
+        transform: rotate(180deg);
+        color: inherit;
+        transition: all $short-animation-time $linear;
+      }
+
+      &_switch {
+        &:after {
+          top: 2px;
+          transform: rotate(0deg);
+        }
+
+        & ~ .lang-switch__item,
+        & ~ .lang-switch__item:hover {
+          opacity: 1;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &:hover,
+    &_active {
+      color: $dusty;
+      background: $white;
+    }
+  }
+}
