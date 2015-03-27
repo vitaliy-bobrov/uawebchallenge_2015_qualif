@@ -1,0 +1,53 @@
+.socials {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  height: 73px;
+  padding: 25px 14px 0;
+  text-align: right;
+  border-left: 1px solid $chalise;
+  border-right: 1px solid $chalise;
+
+  @media all and (min-width: $desktop) {
+    width: auto;
+    text-align: center;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    height: 30px;
+    padding: 0 14px;
+    color: $white;
+    text-decoration: none;
+
+    &_facebook {
+      background: $facebook;
+
+      &:hover,
+      &:focus {
+        background: lighten($facebook, 10%);
+      }
+    }
+
+    &__icon {
+      display: inline-block;
+      vertical-align: top;
+      width: 9px;
+      height: 30px;
+      margin-right: 12px;
+    }
+
+    &__text {
+      font-size: 12px;
+      line-height: 30px;
+
+      &:after {
+        content: '| ' attr(data-social-counter);
+        display: inline-block;
+        vertical-align: baseline;
+        margin-left: 8px;
+      }
+    }
+  }
+}

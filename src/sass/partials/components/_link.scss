@@ -5,3 +5,35 @@
     }
   }
 }
+
+.text-anchor {
+  text-decoration: none;
+  color: $sun;
+  position: relative;
+  z-index: $content;
+
+  &:before {
+    content: '';
+    box-sizing: content-box;
+    position: absolute;
+    top: 0;
+    left: -10%;
+    border-radius: 4px;
+    z-index: $under-content;
+    width: 120%;
+    height: 110%;
+    background: $oslo;
+    opacity: 0;
+    transform: scale(0);
+    transition: all $short-animation-time $linear;
+  }
+
+  &:hover {
+    color: $white;
+
+    &:before {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

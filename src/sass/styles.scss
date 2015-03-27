@@ -12,36 +12,29 @@
 
 // LAYOUTS.
 @import 'partials/layout/container';
+@import 'partials/layout/column';
 @import 'partials/layout/header';
+@import 'partials/layout/content';
+@import 'partials/layout/footer';
 
 // COMPONENTS.
 @import 'partials/components/logo';
 @import 'partials/components/link';
+@import 'partials/components/icon';
 @import 'partials/components/navigation';
 @import 'partials/components/language-switch';
+@import 'partials/components/banner';
+@import 'partials/components/carousel';
+@import 'partials/components/promotion';
+@import 'partials/components/about';
+@import 'partials/components/company';
+@import 'partials/components/contacts';
+@import 'partials/components/socials';
+@import 'partials/components/credentials';
 
 // ANIMATIONS.
 @import 'animations';
 
-.banner {
-  height: 523px;
+// VENDOR.
+@import 'vendor/owl-carousel';
 
-  &_parallax {
-    position: relative;
-    z-index: $under-content;
-
-    &__background {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-image: url('../images/banner-bg.jpg');
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: 0 center;
-      background-size: cover;
-      z-index: $parallax-bg;
-    }
-  }
-}

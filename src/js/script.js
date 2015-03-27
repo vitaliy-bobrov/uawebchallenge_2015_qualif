@@ -5,10 +5,10 @@
         expandedClass = 'nav__item_expanded';
 
     // Sub-navigation handler.
-    if(docWidth < 1140) {
+    if(docWidth < 1025) {
       $(navExpandable).click(function(event) {
         event.preventDefault();
-        $(this).toogleClass(expandedClass);
+        $(this).toggleClass(expandedClass);
       });
     }
 
@@ -21,6 +21,28 @@
     // Language switcher handler.
     $('.lang-switch__item_active').click(function() {
       $(this).toggleClass('lang-switch__item_active_switch');
+    });
+
+    // Carousel.
+    $('.owl-carousel').owlCarousel({
+      margin: 29,
+      navText: [],
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1,
+          dots: false,
+        },
+        640: {
+          items: 2,
+          dots: true,
+        },
+        1024: {
+          items: 3,
+          dots: true,
+        },
+      },
     });
 
   });

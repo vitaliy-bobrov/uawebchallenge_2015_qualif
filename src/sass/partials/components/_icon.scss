@@ -1,0 +1,21 @@
+.icon {
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &_present {
+    background-image: url('../images/icon-present.png');
+  }
+
+  &_phone {
+    background-image: url('../images/icon-phone.png');
+  }
+
+  &_mail {
+    background-image: url('../images/icon-mail.png');
+  }
+
+  &_facebook {
+    background-image: url('../images/icon-facebook.png');
+  }
+}

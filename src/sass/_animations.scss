@@ -1,7 +1,8 @@
 a,
 input,
 textarea,
-button {
+button,
+a i {
   transition: all $default-animation-time $linear;
 }
 

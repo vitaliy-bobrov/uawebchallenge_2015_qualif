@@ -1,0 +1,147 @@
+.carousel {
+  padding: 30px 0 0;
+
+  @media all and (min-width: $desktop) {
+    padding-top: 34px;
+  }
+
+  &__item {
+    display: block;
+    height: 202px;
+    position: relative;
+    padding: 130px 0 25px;
+    text-align: center;
+    text-decoration: none;
+
+    @media all and (min-width: $desktop) {
+      height: auto;
+      padding-top: 184px;
+      overflow: hidden;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: $content;
+        background: linear-gradient(to bottom, rgba($black, 0) 24%, rgba($black, .4) 94%, rgba($black, .55) 100%);
+      }
+
+      &:hover {
+        .carousel__item__image {
+          filter: saturate(1.5);
+        }
+
+        .carousel__item__title,
+        .carousel__item__description {
+          text-shadow: 0 0 12px rgba($black, .8);
+        }
+
+      }
+    }
+
+    &__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: $under-content;
+      transition: all $default-animation-time $ease;
+    }
+
+    &__badge {
+      position: absolute;
+      left: 0;
+      top: 10%;
+      z-index: $content;
+      padding: 0 10px;
+      font-size: 12px;
+      line-height: 33px;
+      font-weight: 700;
+      letter-spacing: .6px;
+      text-align: left;
+      color: $white;
+      background: $orange;
+
+      @media all and (min-width: $desktop) {
+        top: 15%;
+        padding: 0 15px;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: -12px;
+        top: 0;
+        bottom: 0;
+        border-right: 12px solid transparent;
+        border-top: 33px solid $orange;
+      }
+    }
+
+    &__title,
+    &__description {
+      position: relative;
+      z-index: $content;
+      color: $white;
+      text-shadow: 0 2px 2px rgba($black, .3);
+      transition: all $default-animation-time $ease;
+    }
+
+    &__title {
+      margin: 0 0 5px;
+      font-size: 18px;
+      line-height: 18px;
+      font-weight: 700;
+    }
+
+    &__description {
+      margin: 0;
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 400;
+    }
+  }
+}
+
+.owl-dots {
+  padding-top: 12px;
+  text-align: center;
+}
+
+.owl-dot {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: $silver;
+  transition: all $default-animation-time $ease;
+
+  @media all and (min-width: $desktop) {
+    margin-left: 6px;
+    width: 7px;
+    height: 7px;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.5);
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.active {
+    background: $sun;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+}

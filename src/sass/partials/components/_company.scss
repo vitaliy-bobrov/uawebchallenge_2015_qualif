@@ -1,0 +1,47 @@
+.company {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 30%;
+  height: 74px;
+  padding: 10px 0 0 10px;
+  text-decoration: none;
+  color: $white;
+  border-bottom: 1px solid $chalise;
+  border-left: 1px solid $chalise;
+  @include clearfix();
+
+  @media all and (min-width: $tablet-land) {
+    max-width: 25%;
+    padding-top: 16px;
+
+    &__logo {
+      float: left;
+    }
+  }
+
+  @media all and (min-width: $desktop) {
+    height: auto;
+    padding-left: 0;
+    border: 0;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 11px;
+    line-height: 12px;
+
+    @media all and (min-width: $tablet-land) {
+      margin-left: 133px;
+      white-space: normal;
+    }
+
+    @media all and (min-width: $desktop) {
+      width: 81px;
+      margin: 0 82px 0 133px;
+    }
+  }
+
+  &:hover {
+    color: $sun;
+  }
+}

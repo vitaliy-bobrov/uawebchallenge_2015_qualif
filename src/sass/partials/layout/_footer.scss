@@ -1,0 +1,11 @@
+.footer {
+  background: $footer;
+
+  &__top {
+    border-bottom: 1px solid $chalise;
+  }
+
+  &__bottom {
+    @include clearfix();
+  }
+}

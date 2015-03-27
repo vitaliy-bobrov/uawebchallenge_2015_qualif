@@ -1,0 +1,105 @@
+.banner {
+  padding: 50px 0 25px;
+  text-align: center;
+
+  @media all and (min-width: $desktop) {
+    padding: 116px 0 44px;
+  }
+
+  &_parallax {
+    position: relative;
+    z-index: $content;
+
+    &__background {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: top center;
+      background-size: cover;
+      z-index: $under-content;
+
+      &_home {
+        background-image: url('../images/banner-bg.jpg');
+      }
+    }
+  }
+
+  &__title,
+  &__subtitle {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 17px;
+    color: $white;
+    background: rgba($black, .7);
+  }
+
+  &__title {
+    margin: 0 0 2px;
+    font-size: 30px;
+    line-height: 147%;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @media all and (min-width: $tablet-land) {
+      font-size: 36px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 11px;
+    font-size: 20px;
+    line-height: 170%;
+    font-weight: 400;
+
+    @media all and (min-width: $tablet-land) {
+      font-size: 24px;
+    }
+  }
+
+  &__button {
+    display: block;
+    height: 44px;
+    margin: 0 auto 60px;
+    border: 0;
+    font-size: 14px;
+    color: $white;
+    border-radius: 4px;
+    background-color: $shaft;
+    cursor: pointer;
+
+    @media all and (min-width: $desktop) {
+      margin-bottom: 124px;
+    }
+
+    &:hover {
+      color: $shaft;
+      background-color: $white;
+    }
+
+    &_call-to-buy {
+      padding: 0 40px 0 69px;
+      text-transform: uppercase;
+      position: relative;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 12px;
+        left: 35px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: $sun url('../images/icon-euro.png') no-repeat center;
+      }
+    }
+  }
+
+  .container {
+    overflow: hidden;
+  }
+}

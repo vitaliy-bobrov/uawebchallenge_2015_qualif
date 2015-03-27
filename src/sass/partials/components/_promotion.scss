@@ -1,0 +1,119 @@
+.promotion {
+  margin-top: 40px;
+  font-size: 0;
+
+  @media all and (min-width: $desktop) {
+    margin-top: 60px;
+  }
+
+  &__item {
+    display: block;
+    margin: 0 auto;
+    width: calc(100% - 44px);
+    font-size: 13px;
+    line-height: 61px;
+    text-align: center;
+    text-decoration: none;
+    color: $emperor;
+    background: $white;
+    position: relative;
+
+    @media all and (min-width: $tablet-land) {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+      margin: 0;
+      padding-left: 40px;
+      text-align: left;
+    }
+
+    @media all and (min-width: $desktop) {
+      width: 53%;
+      padding-left: 70px;
+      font-size: 14px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -22px;
+      border-left: 22px solid transparent;
+      border-bottom: 61px solid $white;
+      transition: all $default-animation-time $linear;
+    }
+
+    &:hover,
+    &:focus {
+      color: $orange;
+    }
+
+    &:first-child {
+      padding-left: 0;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $white;
+      background: $orange;
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -22px;
+        border-right: 22px solid transparent;
+        border-top: 61px solid $orange;
+        transition: all $default-animation-time $linear;
+      }
+
+      @media all and (min-width: $tablet-land) {
+        text-align: center;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      @media all and (min-width: $desktop) {
+        width: 47%;
+      }
+
+      &:before {
+        display: none;
+      }
+
+      &:hover,
+      &:focus {
+        color: $emperor;
+        background: $white;
+
+        &:after {
+          border-top-color: $white;
+        }
+
+        & + .promotion__item {
+          color: $white;
+          background: $orange;
+
+          &:before {
+            border-bottom-color: $orange;
+          }
+        }
+      }
+    }
+
+    &__icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 15px;
+      width: 32px;
+      height: 32px;
+      background-color: $white;
+
+      @media all and (min-width: $desktop) {
+        margin-right: 30px;
+      }
+    }
+  }
+}

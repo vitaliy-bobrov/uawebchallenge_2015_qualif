@@ -1,0 +1,49 @@
+.contacts {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  height: 73px;
+  padding-top: 25px;
+  border-left: 1px solid $chalise;
+
+  @media all and (min-width: $desktop) {
+    width: auto;
+    height: auto;
+    margin-left: 68px;
+    border: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    font-size: 12px;
+    line-height: 29px;
+    text-align: center;
+    text-decoration: none;
+    color: $white;
+
+    @media all and (min-width: $desktop) {
+      padding: 0 18px;
+      text-align: left;
+    }
+
+    &:hover,
+    &:focus {
+      color: $sun;
+
+      .contacts__icon {
+        background-color: $sun;
+      }
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 8px;
+    width: 29px;
+    height: 29px;
+    background-color: $boulder;
+  }
+}

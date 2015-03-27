@@ -1,29 +1,64 @@
 .lang-switch {
-  display: inline-block;
-  vertical-align: top;
   width: 69px;
-  height: 73px;
+  height: 40px;
   border-left: 1px solid $alto;
   border-right: 1px solid $alto;
+  order: -1;
+  flex-shrink: 0;
+
+  @media all and (min-width: $tablet) {
+    display: inline-block;
+    vertical-align: top;
+    width: 10%;
+    height: 73px;
+    border-top: 1px solid $alto;
+  }
+
+  @media all and (min-width: $tablet-land) {
+    border-top: 0;
+  }
+
+  @media all and (min-width: $desktop) {
+    width: 69px;
+  }
 
   &__item {
-    height: 44px;
+    height: 40px;
     position: relative;
     z-index: $subnav;
     font-size: 13px;
-    line-height: 36px;
+    line-height: 40px;
     text-align: center;
     color: $white;
     background: $lang-bg;
     opacity: 0;
+    transform: rotateY(45deg);
+    transform-origin: 0 0 0;
+    transform-style: preserve-3d;
     transition: all $short-animation-time $linear;
+    will-change: opacity, transform;
+
+    @media all and (min-width: $tablet) {
+      height: 44px;
+      line-height: 36px;
+    }
+
+    @for $index from 3 to 5 {
+      &:nth-of-type(#{$index}) {
+        transition-delay: $short-animation-time * ($index - 2);
+      }
+    }
 
     &_active {
-      height: 60px;
-      line-height: 73px;
       opacity: 1;
       position: relative;
       cursor: pointer;
+      transform: rotateY(0deg);
+
+      @media all and (min-width: $tablet) {
+        height: 60px;
+        line-height: 73px;
+      }
 
       &:after {
         content: '^';
@@ -44,6 +79,7 @@
         & ~ .lang-switch__item,
         & ~ .lang-switch__item:hover {
           opacity: 1;
+          transform: rotateY(0deg);
           cursor: pointer;
         }
       }

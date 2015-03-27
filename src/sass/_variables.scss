@@ -6,14 +6,20 @@ $white: #fff;
 $black: #000;
 $gunsmoke: #8c8d8d;
 $mine: #333;
+$shaft: #212121;
 $tundora: #444;
 $emperor: #555;
 $dusty: #999;
 $alto: #ddd;
+$salto: #eee;
 $oslo: #939494;
+$silver: #bbbbbb;
+$chalise: #a6a6a6;
+$boulder: #7c7c7c;
 $concrete: #f3f3f3;
 $orange: #eb4200;
 $sun: #ff4700;
+$facebook: #3a5795;
 
 // COLORS BY ELEMENTS.
 $nav: $mine;
@@ -43,10 +49,8 @@ $tablet-land: 1024px;
 $desktop: 1140px;
 
 // Z-INDEXES.
-$parallax-bg: -2;
 $under-content: -1;
 $content: 0;
+$header-content: 1;
 $subnav: 3;
 $image-overlay: 4;
-$overlay: 5;
-$modal: 10;

@@ -1,5 +1,16 @@
 .header {
   position: relative;
+  z-index: $header-content;
   perspective: 500;
-  box-shadow: 0px 3px 5px 0px rgba($black, .1);
+  box-shadow: 0 3px 5px 0 rgba($black, .1);
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media all and (min-width: $tablet) {
+      display: block;
+    }
+  }
 }

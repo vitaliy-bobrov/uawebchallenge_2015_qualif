@@ -3,15 +3,39 @@
   vertical-align: top;
 
   &_main {
-    width: 864px;
+    width: 100%;
     text-align: center;
+    border-top: 1px solid $alto;
+    border-left: 1px solid $alto;
+    border-right: 1px solid $alto;
+
+    @media all and (min-width: $tablet) {
+      width: 90%;
+      border-right: 0;
+    }
+
+    @media all and (min-width: $tablet-land) {
+      width: 864px;
+      max-width: 70%;
+      border: 0;
+    }
 
     .nav__item {
+      width: 20%;
       line-height: 71px;
-      padding: 0 12px;
-      margin-left: 30px;
+      text-align: center;
       color: $mine;
       border-bottom: 2px solid $white;
+
+      @media all and (min-width: $tablet-land) {
+        width: auto;
+        margin-left: 30px;
+        padding: 0 12px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
 
       &:hover,
       &:focus,
@@ -44,6 +68,38 @@
             display: block;
           }
 
+          @media all and (min-width: $desktop) {
+            & + .subnav {
+              opacity: 1;
+              transform: rotateY(0);
+
+              .subnav__item {
+                opacity: 1;
+                transform: translateX(0);
+
+                &:first-of-type {
+                  transition-delay: $default-animation-time;
+                }
+
+                @for $index from 2 through 10 {
+                  &:nth-of-type(#{$index}) {
+                    transition-delay: $default-animation-time + ($fast-animation-time * ($index - 1));
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &.nav__item_expanded {
+          color: $white;
+          border-color: $nav-item-expanded;
+          background:  $nav-item-expanded;
+
+          &:after {
+            display: block;
+          }
+
           & + .subnav {
             opacity: 1;
             transform: rotateY(0);
@@ -65,10 +121,103 @@
           }
         }
       }
+    }
+  }
+
+  &_secondary {
+    font-size: 0;
+
+    .nav__item {
+      width: 32%;
+      height: 51px;
+      margin: 0 0 5px 5px;
+      font-weight: 700;
+      line-height: 51px;
+      text-align: center;
+      color: $mine;
+      background: $white;
+
+      @media all and (min-width: $desktop) {
+        width: 189px;
+        margin: 0 0 0 1px;
+      }
 
       &:first-child {
         margin-left: 0;
       }
+
+      &:hover,
+      &:focus {
+        background: $sun;
+        color: $white;
+      }
+    }
+  }
+
+  &_footer {
+    width: 70%;
+    text-align: right;
+    font-size: 0;
+    border-bottom: 1px solid $chalise;
+    border-right: 1px solid $chalise;
+
+    @media all and (min-width: $tablet-land) {
+      width: 75%;
+    }
+
+    @media all and (min-width: $desktop) {
+      width: auto;
+      text-align: inherit;
+      border: 0;
+    }
+
+    .nav__item {
+      line-height: 73px;
+      padding: 0 12px;
+      margin-left: 12px;
+      color: $white;
+      background: $footer;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:hover,
+      &:focus {
+        color: $footer;
+        background: $white;
+      }
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 22px;
+    font-size: 14px;
+    line-height: 15px;
+    font-weight: 400;
+    color: $white;
+    text-shadow: 0 1px 3px rgba($black, .35);
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 6px;
+      width: 1000px;
+      height: 1px;
+      background: rgba($white, .3);
+    }
+
+    &:before {
+      left: calc(100% + 20px);
+    }
+
+    &:after {
+      right: calc(100% + 20px);
     }
   }
 
@@ -82,19 +231,24 @@
 }
 
 .subnav {
-  padding: 26px 0 33px;
+  padding: 20px 0 0;
   position: absolute;
   left: 0;
   right: 0;
   top: 100%;
   z-index: $subnav;
+  text-align: left;
   opacity: 0;
-  transform: rotateX(-90deg);
+  transform: rotateX(-90deg) ;
   transform-origin: 0 0 0;
   transform-style: preserve-3d;
   transition: all $default-animation-time $ease;
   will-change: opacity, transform;
   background: $sub-nav-bg;
+
+  @media all and (min-width: $desktop) {
+    padding: 26px 0 33px;
+  }
 
   &:hover {
     opacity: 1;
@@ -104,17 +258,23 @@
   &__item {
     display: inline-block;
     vertical-align: top;
-    width: 117px;
-    margin-left: 29px;
-    text-align: left;
+    width: 25%;
+    margin-bottom: 20px;
+    text-align: center;
     text-decoration: none;
     opacity: 0;
     transform: translateX(-20px);
     transition: all $fast-animation-time $linear;
     will-change: opacity, transform;
 
-    &:first-child {
-      margin-left: 0;
+    @media all and (min-width: $desktop) {
+      width: 117px;
+      margin: 0 0 0 29px;
+      text-align: left;
+
+      &:first-child {
+        margin-left: 0;
+      }
     }
 
     &:hover,
@@ -155,12 +315,16 @@
     &__title {
       max-width: 98%;
       margin-bottom: 0;
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 400;
       white-space: normal;
       color: $white;
       z-index: $image-overlay;
       will-change: transform, opacity;
+
+      @media all and (min-width: $desktop) {
+        font-size: 14px;
+      }
     }
   }
 }

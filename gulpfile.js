@@ -19,7 +19,8 @@ var config = {
 		dest: './build/images',
 	},
 	scripts: {
-		src: './src/js/*.js',
+		src: './src/js/**/*.js',
+		vendor: './src/js/vendor/*.js',
 		dest: './build/js',
 	},
 	styles: {
@@ -32,6 +33,8 @@ var config = {
 	},
 	port: 35729,
 };
+
+var vendorJsFilter = filter(config.scripts.vendor);
 
 var AUTOPREFIXER_BROWSERS = [
 	'ie >= 9',
@@ -90,13 +93,15 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function() {
-	return gulp.src(config.scripts.src)
+	return gulp.src([config.scripts.src, config.scripts.vendor])
 	.pipe(plumber({
     errorHandler: onError
   }))
+  .pipe(vendorJsFilter)
 	.pipe(jshint())
   .pipe(jshint.reporter('jshint-stylish'))
   .pipe(uglify({preserveComments: 'some'}))
+  .pipe(vendorJsFilter.restore())
 	.pipe(gulp.dest(config.scripts.dest))
 	.pipe(size({title: 'scripts'}))
 	.pipe(browserSync.reload({stream:true}));
@@ -123,7 +128,7 @@ gulp.task('serve', ['build'], function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(config.scripts.src, ['scripts']);
+	gulp.watch([config.scripts.src, config.scripts.vendor], ['scripts']);
 	gulp.watch(config.styles.src, ['styles']);
 	gulp.watch(config.images.src, ['images']);
 	gulp.watch(config.html.src, ['html']);
