@@ -1,1 +1,50 @@
-!function(e,t){e(function(){var i=t.innerWidth,n=e(".nav__item_expandable"),a="nav__item_expanded";1140>i&&e(n).click(function(t){t.preventDefault(),e(this).toogleClass(a)}),e(".subnav").mouseenter(function(){e(this).prev(n).addClass(a)}).mouseleave(function(){e(this).prev(n).removeClass(a)}),e(".lang-switch__item_active").click(function(){e(this).toggleClass("lang-switch__item_active_switch")})})}(jQuery,window);
+;(function($, window){
+  $(function() {
+    var docWidth = window.innerWidth,
+        navExpandable = $('.nav__item_expandable'),
+        expandedClass = 'nav__item_expanded';
+
+    // Sub-navigation handler.
+    if(docWidth < 1025) {
+      $(navExpandable).click(function(event) {
+        event.preventDefault();
+        $(this).toggleClass(expandedClass);
+      });
+    }
+
+    $('.subnav').mouseenter(function() {
+      $(this).prev(navExpandable).addClass(expandedClass);
+    }).mouseleave(function() {
+      $(this).prev(navExpandable).removeClass(expandedClass);
+    });
+
+    // Language switcher handler.
+    $('.lang-switch__item_active').click(function() {
+      $(this).toggleClass('lang-switch__item_active_switch');
+    });
+
+    // Carousel.
+    $('.owl-carousel').owlCarousel({
+      margin: 29,
+      navText: [],
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1,
+          dots: false,
+        },
+        640: {
+          items: 2,
+          dots: true,
+        },
+        1024: {
+          items: 3,
+          dots: true,
+        },
+      },
+    });
+
+  });
+})(jQuery, window);
+
