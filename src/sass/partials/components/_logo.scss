@@ -7,12 +7,13 @@
     width: 100%;
     height: 40px;
     padding: 10px 0;
-    flex-shrink: 0;
+    border-left: 1px solid $alto;
 
     @media all and (min-width: $tablet) {
       height: auto;
       max-width: 30%;
       padding: 15px 0;
+      border-left: 0;
     }
 
     @media all and (min-width: $tablet-land) {

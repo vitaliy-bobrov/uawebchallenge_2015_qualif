@@ -1,6 +1,10 @@
 .promotion {
-  margin-top: 40px;
+  margin-top: 30px;
   font-size: 0;
+
+  @media all and (min-width: $tablet) {
+    margin-top: 40px;
+  }
 
   @media all and (min-width: $desktop) {
     margin-top: 60px;
@@ -8,15 +12,31 @@
 
   &__item {
     display: block;
+    height: 50px;
     margin: 0 auto;
+    padding: 0 10%;
     width: calc(100% - 44px);
-    font-size: 13px;
-    line-height: 61px;
+    font-size: 12px;
+    line-height: 25px;
     text-align: center;
     text-decoration: none;
     color: $emperor;
     background: $white;
     position: relative;
+    white-space: normal;
+
+    @media all and (min-width: $mobile-land) {
+      width: 80%;
+      height: auto;
+      padding: 0;
+      line-height: 50px;
+    }
+
+    @media all and (min-width: $tablet) {
+      width: calc(100% - 44px);
+      font-size: 13px;
+      line-height: 61px;
+    }
 
     @media all and (min-width: $tablet-land) {
       display: inline-block;
@@ -40,8 +60,12 @@
       top: 0;
       left: -22px;
       border-left: 22px solid transparent;
-      border-bottom: 61px solid $white;
+      border-bottom: 50px solid $white;
       transition: all $default-animation-time $linear;
+
+      @media all and (min-width: $tablet) {
+        border-bottom-width: 61px;
+      }
     }
 
     &:hover,
@@ -63,8 +87,12 @@
         top: 0;
         right: -22px;
         border-right: 22px solid transparent;
-        border-top: 61px solid $orange;
+        border-top: 50px solid $orange;
         transition: all $default-animation-time $linear;
+
+        @media all and (min-width: $tablet) {
+          border-top-width: 61px;
+        }
       }
 
       @media all and (min-width: $tablet-land) {
@@ -106,10 +134,19 @@
     &__icon {
       display: inline-block;
       vertical-align: middle;
-      margin-right: 15px;
-      width: 32px;
-      height: 32px;
+      margin-right: 10px;
+      width: 25px;
+      height: 25px;
       background-color: $white;
+      position: relative;
+      top: 5px;
+
+      @media all and (min-width: $mobile-land) {
+        margin-right: 15px;
+        width: 32px;
+        height: 32px;
+        position: static;
+      }
 
       @media all and (min-width: $desktop) {
         margin-right: 30px;

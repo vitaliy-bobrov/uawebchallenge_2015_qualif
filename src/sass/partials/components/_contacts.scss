@@ -1,10 +1,20 @@
-.contacts {
-  display: inline-block;
-  vertical-align: top;
-  width: 50%;
-  height: 73px;
-  padding-top: 25px;
+.contacts {  
+  height: 50px;
+  padding-top: 10px;
   border-left: 1px solid $chalise;
+  border-right: 1px solid $chalise;
+  border-bottom: 1px solid $chalise;
+
+
+  @media all and (min-width: $tablet) {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 73px;
+    padding-top: 25px;
+    border-right: 0;
+    border-bottom: 0;
+  }
 
   @media all and (min-width: $desktop) {
     width: auto;

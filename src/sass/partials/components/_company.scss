@@ -1,17 +1,30 @@
-.company {
-  display: inline-block;
-  vertical-align: top;
-  max-width: 30%;
-  height: 74px;
+.company {  
   padding: 10px 0 0 10px;
   text-decoration: none;
   color: $white;
-  border-bottom: 1px solid $chalise;
-  border-left: 1px solid $chalise;
   @include clearfix();
 
+  @media all and (min-width: $mobile-land) {
+    &__logo {
+      float: left;
+    }
+  }  
+
+  @media all and (min-width: $tablet) {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    height: 74px;
+    border-bottom: 1px solid $chalise;
+    border-left: 1px solid $chalise;
+
+    &__logo {
+      float: none;
+    }
+  }
+
   @media all and (min-width: $tablet-land) {
-    max-width: 25%;
+    width: 25%;
     padding-top: 16px;
 
     &__logo {
@@ -25,10 +38,17 @@
     border: 0;
   }
 
-  &__text {
-    margin: 0;
+  &__text {    
     font-size: 11px;
     line-height: 12px;
+
+    @media all and (min-width: $mobile-land) {
+      margin-left: 133px;
+    }
+
+    @media all and (min-width: $tablet) {
+      margin-left: 0;
+    }
 
     @media all and (min-width: $tablet-land) {
       margin-left: 133px;

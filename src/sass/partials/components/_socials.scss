@@ -1,12 +1,18 @@
-.socials {
-  display: inline-block;
-  vertical-align: top;
-  width: 50%;
-  height: 73px;
-  padding: 25px 14px 0;
-  text-align: right;
+.socials {  
+  height: 50px;
+  padding-top: 10px;  
+  text-align: center;
   border-left: 1px solid $chalise;
   border-right: 1px solid $chalise;
+
+  @media all and (min-width: $tablet) {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 73px;
+    padding: 25px 14px 0;
+    text-align: right;
+  }
 
   @media all and (min-width: $desktop) {
     width: auto;
