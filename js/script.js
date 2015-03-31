@@ -23,6 +23,15 @@
       $(this).toggleClass('lang-switch__item_active_switch');
     });
 
+    // Mobile menu toggle.
+    $('.mobile-nav-switch').click(function() {
+      $(this).toggleClass('opened');
+
+      if(!$(this).hasClass('opened')) {
+        $(navExpandable).removeClass(expandedClass);
+      }
+    });
+
     // Carousel.
     $('.owl-carousel').owlCarousel({
       margin: 29,
